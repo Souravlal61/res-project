@@ -1,34 +1,15 @@
 
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 
-export default function Signin() {
+export default function Signup() {
+  let Navigate=useNavigate();
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
+      
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
@@ -52,6 +33,22 @@ export default function Signin() {
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
                 <label htmlFor="email-address" className="sr-only">
+                  Phone Number
+                </label>
+                <input
+                  id="Phone Number"
+                  name="Phone no."
+                  type="Phone no."
+                  autoComplete="email"
+                  required
+                  className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="Phone Number"
+                />
+              </div>
+
+
+              <div>
+                <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
                 <input
@@ -64,6 +61,9 @@ export default function Signin() {
                   placeholder="Email address"
                 />
               </div>
+
+
+
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
@@ -108,7 +108,7 @@ export default function Signin() {
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                 </span>
-                <Link to="/home">
+                <Link to="/">
       Sign in
       </Link>
               </button>
